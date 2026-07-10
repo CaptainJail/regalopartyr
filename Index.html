@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi mejor amigo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="player-container">
+        <!-- Mensaje especial -->
+        <div class="message-box">
+            <h1>¡Gracias por tu amistad!</h1>
+            <p class="subtext">Ánimo, ¡eres el mejor! 💪✨</p>
+        </div>
+
+        <!-- Vista del Reproductor -->
+        <div class="music-player">
+            <!-- Vinilo / Disco Giratorio -->
+            <div class="disc" id="disc">
+                <div class="disc-center"></div>
+            </div>
+
+            <div class="song-info">
+                <h2 id="song-title">Canción Especial</h2>
+                <p id="song-artist">Para un gran amigo</p>
+            </div>
+
+            <!-- Reproductor de Audio Nativo -->
+            <audio id="audio" src="cancion.mp3" controls></audio>
+        </div>
+    </div>
+
+    <script>
+        // Animación del disco al reproducir la música
+        const audio = document.getElementById('audio');
+        const disc = document.getElementById('disc');
+
+        audio.onplay = () => disc.classList.add('playing');
+        audio.onpause = () => disc.classList.remove('playing');
+    </script>
+</body>
+</html>
